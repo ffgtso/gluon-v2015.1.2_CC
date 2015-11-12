@@ -5,15 +5,17 @@
 # CPE210/220/510/520
 $(eval $(call GluonProfile,CPE510,rssileds))
 $(eval $(call GluonModel,CPE510,cpe210-220-510-520,tp-link-cpe510-v1.0))
-
+ifeq ($(MAKECCVERSION),1)
 $(eval $(call GluonModelAlias,CPE510,tp-link-cpe510-v1.0,tp-link-cpe210-v1.0))
 $(eval $(call GluonModelAlias,CPE510,tp-link-cpe510-v1.0,tp-link-cpe220-v1.0))
 $(eval $(call GluonModelAlias,CPE510,tp-link-cpe510-v1.0,tp-link-cpe520-v1.0))
+endif
 $(eval $(call GluonModelAlias,CPE510,tp-link-cpe510-v1.0,tp-link-cpe210-v1.1))
 $(eval $(call GluonModelAlias,CPE510,tp-link-cpe510-v1.0,tp-link-cpe220-v1.1))
 $(eval $(call GluonModelAlias,CPE510,tp-link-cpe510-v1.0,tp-link-cpe510-v1.1))
 $(eval $(call GluonModelAlias,CPE510,tp-link-cpe510-v1.0,tp-link-cpe520-v1.1))
 
+ifeq ($(MAKECCVERSION),1)
 # TL-WA701N/ND v1, v2
 $(eval $(call GluonProfile,TLWA701))
 $(eval $(call GluonModel,TLWA701,tl-wa701n-v1,tp-link-tl-wa701n-nd-v1))
@@ -51,16 +53,20 @@ $(eval $(call GluonModel,TLWR743,tl-wr743nd-v2,tp-link-tl-wr743n-nd-v2))
 $(eval $(call GluonProfile,TLWA801))
 $(eval $(call GluonModel,TLWA801,tl-wa801nd-v1,tp-link-tl-wa801n-nd-v1))
 $(eval $(call GluonModel,TLWA801,tl-wa801nd-v2,tp-link-tl-wa801n-nd-v2))
+endif
 
 # TL-WR841N/ND v3, v5, v7, v8, v9
 $(eval $(call GluonProfile,TLWR841))
+ifeq ($(MAKECCVERSION),1)
 $(eval $(call GluonModel,TLWR841,tl-wr841nd-v3,tp-link-tl-wr841n-nd-v3))
 $(eval $(call GluonModel,TLWR841,tl-wr841nd-v5,tp-link-tl-wr841n-nd-v5))
 $(eval $(call GluonModel,TLWR841,tl-wr841nd-v7,tp-link-tl-wr841n-nd-v7))
 $(eval $(call GluonModel,TLWR841,tl-wr841n-v8,tp-link-tl-wr841n-nd-v8))
 $(eval $(call GluonModel,TLWR841,tl-wr841n-v9,tp-link-tl-wr841n-nd-v9))
+endif
 $(eval $(call GluonModel,TLWR841,tl-wr841n-v10,tp-link-tl-wr841n-nd-v10))
 
+ifeq ($(MAKECCVERSION),1)
 # TL-WR842N/ND v1, v2
 $(eval $(call GluonProfile,TLWR842))
 $(eval $(call GluonModel,TLWR842,tl-wr842n-v1,tp-link-tl-wr842n-nd-v1))
@@ -77,13 +83,17 @@ $(eval $(call GluonModel,TLWR941,tl-wr941nd-v6,tp-link-tl-wr941n-nd-v6))
 $(eval $(call GluonModelAlias,TLWR941,tp-link-tl-wr941n-nd-v4,tp-link-tl-wr940n-nd-v1))
 $(eval $(call GluonModelAlias,TLWR941,tp-link-tl-wr941n-nd-v5,tp-link-tl-wr940n-nd-v2))
 $(eval $(call GluonModelAlias,TLWR941,tp-link-tl-wr941n-nd-v6,tp-link-tl-wr940n-nd-v3))
+endif
 
 # TL-WR1043N/ND v1, v2, v3
 $(eval $(call GluonProfile,TLWR1043))
+ifeq ($(MAKECCVERSION),1)
 $(eval $(call GluonModel,TLWR1043,tl-wr1043nd-v1,tp-link-tl-wr1043n-nd-v1))
 $(eval $(call GluonModel,TLWR1043,tl-wr1043nd-v2,tp-link-tl-wr1043n-nd-v2))
+endif
 $(eval $(call GluonModel,TLWR1043,tl-wr1043nd-v3,tp-link-tl-wr1043n-nd-v3))
 
+ifeq ($(MAKECCVERSION),1)
 # TL-WDR3500/3600/4300 v1
 $(eval $(call GluonProfile,TLWDR4300))
 $(eval $(call GluonModel,TLWDR4300,tl-wdr3500-v1,tp-link-tl-wdr3500-v1))
@@ -232,3 +242,4 @@ $(eval $(call GluonModel,ALL0315N,all0315n,allnet-all0315n))
 $(eval $(call GluonProfile,GLINET))
 $(eval $(call GluonModel,GLINET,gl-inet-6408A-v1,gl-inet-6408a-v1))
 $(eval $(call GluonModel,GLINET,gl-inet-6416A-v1,gl-inet-6416a-v1))
+endif
